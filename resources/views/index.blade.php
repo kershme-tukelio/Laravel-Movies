@@ -1,13 +1,15 @@
-<html>
-    <head>
-        <title>Movies</title>
-    </head>
-    <body>
-        <div>
-            @foreach($movies as $movie)
-                <h2><a href="/{{$movie->id}}">{{$movie->title}}</a></h2>
+@extends('layouts.app')
+
+@section('title', 'Posts')
+
+@section('content')
+<h1>Movies</h1>
+    <ul>
+        @foreach($movies as $movie)
+            <li>
+                <h3><a href="/movies/{{$movie->id}}">{{$movie->title}}</a></h3>
                 <p>{{$movie->zaplet}}</p>
-            @endforeach
-        </div>
-    </body>
-</html>
+            </li>
+        @endforeach
+    </ul>
+@endsection
